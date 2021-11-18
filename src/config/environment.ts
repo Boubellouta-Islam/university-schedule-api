@@ -13,5 +13,6 @@ export class environment {
 
 export const variables = {
     db_name : process.env.DB_NAME,
-    db_host : process.env.DB_HOST
+    db_host : process.env.DB_HOST,
+    jwt_secret : process.env.JWT_SECRET
 }
