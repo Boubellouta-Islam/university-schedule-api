@@ -1,14 +1,15 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document } from 'mongoose';
+import { Semester, Teaching_unit } from 'src/utils/enum';
 
+export type SubjectDocumnt = Subject & Document;
 @Schema()
 export class Subject {
   @Prop({ unique: true, required: true })
   name: string;
 
-  // FIXME:: enum type
-  @Prop({ /*enum: true,*/ required: true })
-  Unity: string;
+  @Prop({ enum: Teaching_unit, required: true })
+  Unity: Teaching_unit;
 
   @Prop({ required: true })
   coeff: number;
@@ -16,9 +17,8 @@ export class Subject {
   @Prop({ required: true })
   credit: number;
 
-  // FIXME:: enum type
-  @Prop({ /*enum: true,*/ required: true })
-  semester: number;
+  @Prop({ enum: Semester, required: true })
+  semester: Semester;
 
   @Prop({ required: true })
   has_course: Boolean;

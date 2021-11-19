@@ -1,5 +1,4 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import { type } from 'os';
 import { Grade } from 'src/utils/enum';
 import { Document } from 'mongoose';
 

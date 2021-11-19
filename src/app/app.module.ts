@@ -21,6 +21,7 @@ import { adminSchema } from '../models/admin.model';
 import { variables, environment } from '../config/environment';
 import { AuthModule } from '../auth/auth.module';
 import TeacherModule from 'src/teacher/teacher.module';
+import SubjectModule from 'src/subject/subject.module';
 // import { ChoiceController } from './choice/choice.controller';
 // import { ChoiceService } from './choice/choice.service';
 // import { TeacherService } from './teacher/teacher.service';
@@ -36,17 +37,12 @@ import TeacherModule from 'src/teacher/teacher.module';
     ),
     // mongoose schemas
     MongooseModule.forFeature([{ name: 'Test', schema: testSchema }]),
-    MongooseModule.forFeature([{ name: Subject.name, schema: SubjectSchema }]),
     // our modules
     AuthModule,
     TeacherModule,
+    SubjectModule,
   ],
-  controllers: [
-    AppController,
-    TestController,
-    // ChoiceController,
-    // TeacherController,
-  ],
+  controllers: [AppController, TestController],
   providers: [AppService, TestService], //ChoiceService, TeacherService],
 })
 export class AppModule {}
