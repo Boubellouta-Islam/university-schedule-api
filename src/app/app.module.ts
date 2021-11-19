@@ -20,6 +20,7 @@ import { adminSchema } from '../models/admin.model';
 // config
 import { variables, environment } from '../config/environment';
 import { AuthModule } from '../auth/auth.module';
+import TeacherModule from 'src/teacher/teacher.module';
 // import { ChoiceController } from './choice/choice.controller';
 // import { ChoiceService } from './choice/choice.service';
 // import { TeacherService } from './teacher/teacher.service';
@@ -38,6 +39,7 @@ import { AuthModule } from '../auth/auth.module';
     MongooseModule.forFeature([{ name: Subject.name, schema: SubjectSchema }]),
     // our modules
     AuthModule,
+    TeacherModule,
   ],
   controllers: [
     AppController,
