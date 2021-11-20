@@ -24,6 +24,8 @@ import AffectationModule from 'src/affectation/affectation.module';
 import ClassroomModule from 'src/classroom/classroom.module';
 import LevelModule from 'src/level/level.module';
 import SectionModule from 'src/section/section.module';
+import GroupModule from 'src/group/group.module';
+import SubgroupModule from 'src/sub-group/sub-group.module';
 
 @Module({
   imports: [
@@ -44,6 +46,8 @@ import SectionModule from 'src/section/section.module';
     ClassroomModule,
     LevelModule,
     SectionModule,
+    GroupModule,
+    SubgroupModule,
   ],
   controllers: [AppController, TestController],
   providers: [AppService, TestService], //ChoiceService, TeacherService],
