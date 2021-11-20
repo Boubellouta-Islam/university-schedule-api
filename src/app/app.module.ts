@@ -12,9 +12,6 @@ import { TestService } from '../test/test.service';
 
 //models
 import { testSchema } from '../test/test.model';
-import { Subject, SubjectSchema } from 'src/subject/subject.schema';
-// import { teacherSchema } from './models/teacher.model';
-// import { choiceSchema } from './models/choice.model';
 import { adminSchema } from '../models/admin.model';
 
 // config
@@ -23,10 +20,7 @@ import { AuthModule } from '../auth/auth.module';
 import TeacherModule from 'src/teacher/teacher.module';
 import SubjectModule from 'src/subject/subject.module';
 import ChoiceModule from 'src/choice/choice.module';
-// import { ChoiceController } from './choice/choice.controller';
-// import { ChoiceService } from './choice/choice.service';
-// import { TeacherService } from './teacher/teacher.service';
-// import { TeacherController } from './teacher/teacher.controller';
+import AffectationModule from 'src/affectation/affectation.module';
 
 @Module({
   imports: [
@@ -43,6 +37,7 @@ import ChoiceModule from 'src/choice/choice.module';
     TeacherModule,
     SubjectModule,
     ChoiceModule,
+    AffectationModule,
   ],
   controllers: [AppController, TestController],
   providers: [AppService, TestService], //ChoiceService, TeacherService],
