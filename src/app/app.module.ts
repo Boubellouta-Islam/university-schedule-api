@@ -12,7 +12,7 @@ import { TestService } from '../test/test.service';
 
 //models
 import { testSchema } from '../test/test.model';
-import { adminSchema } from '../models/admin.model';
+import { adminSchema } from '../admin/admin.schema';
 
 // config
 import { variables, environment } from '../config/environment';
@@ -26,6 +26,7 @@ import LevelModule from 'src/level/level.module';
 import SectionModule from 'src/section/section.module';
 import GroupModule from 'src/group/group.module';
 import SubgroupModule from 'src/sub-group/sub-group.module';
+import PeriodModule from 'src/period/period.module';
 
 @Module({
   imports: [
@@ -48,6 +49,7 @@ import SubgroupModule from 'src/sub-group/sub-group.module';
     SectionModule,
     GroupModule,
     SubgroupModule,
+    PeriodModule,
   ],
   controllers: [AppController, TestController],
   providers: [AppService, TestService], //ChoiceService, TeacherService],
