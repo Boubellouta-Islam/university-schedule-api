@@ -16,3 +16,52 @@ export enum Teaching_unit {
   UEM = 'UE Méthodologie',
   UET = 'UE Transversale',
 }
+
+export enum ClassType {
+  COURS = 'cours',
+  TD = 'td',
+  TP = 'tp',
+}
+
+export enum LavelName {
+  L1 = 'l1',
+  L2 = 'l2',
+  L3 = 'l3',
+  M1 = 'm1',
+  M2 = 'm2',
+}
+
+export enum Domain {
+  MATH_INFO = 'math & info',
+}
+
+export enum Filiere {
+  INF = 'informatique',
+}
+
+export enum Specialty {
+  FND = 'fondamentale',
+  IND = 'industrielle',
+  ASR = 'administration et sécurité de réseau',
+  SI = "système d'information",
+}
+
+export enum Day {
+  SAT = 'sat',
+  SUN = 'sun',
+  MON = 'mon',
+  TUE = 'tue',
+  WED = 'wed',
+  THU = 'thu',
+}
+
+export enum Status {
+  FREE = 'free',
+  BUSSY = 'bussy',
+  NOT_SURE = 'not sure',
+}
+
+export enum VoeuxType {
+  PRIMARY = 'primary',
+  SECONDARY = 'secondary',
+}
