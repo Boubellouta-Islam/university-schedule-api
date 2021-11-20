@@ -20,7 +20,7 @@ export class Session {
   @Prop({ required: true, enum: ClassType })
   type: ClassType;
 
-  @Prop({ type: Affectation, required: true })
+  @Prop({ type: Affectation })
   @Type(() => Affectation)
   affectation: Affectation;
 

@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { JwtModule } from '@nestjs/jwt';
 import { MongooseModule } from '@nestjs/mongoose';
-import { adminSchema } from 'src/models/admin.model';
+import { adminSchema } from 'src/admin/admin.schema';
 
 import { variables } from '../config/environment';
 import { AuthController } from './auth.controller';

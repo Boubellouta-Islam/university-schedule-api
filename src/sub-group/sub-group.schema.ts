@@ -1,4 +1,5 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
+import { Type } from 'class-transformer';
 import * as mongoose from 'mongoose';
 import { Group } from 'src/group/group.schema';
 
@@ -11,6 +12,7 @@ export class SubGroup extends Group {
     ref: Group.name,
     required: true,
   })
+  @Type(() => Group)
   group: Group;
 }
 

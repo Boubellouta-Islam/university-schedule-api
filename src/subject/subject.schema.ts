@@ -1,8 +1,10 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import { Document } from 'mongoose';
+import { Type } from 'class-transformer';
+import * as mongoose from 'mongoose';
+import { Level } from 'src/level/level.schema';
 import { Semester, Teaching_unit } from 'src/utils/enum';
 
-export type SubjectDocumnt = Subject & Document;
+export type SubjectDocumnt = Subject & mongoose.Document;
 @Schema()
 export class Subject {
   @Prop({ unique: true, required: true })
@@ -37,6 +39,14 @@ export class Subject {
 
   @Prop({ required: true })
   tp_num: number;
+
+  @Prop({
+    type: mongoose.Schema.Types.ObjectId,
+    ref: Level.name,
+    required: true,
+  })
+  @Type(() => Level)
+  level: Level;
 }
 
 export const SubjectSchema = SchemaFactory.createForClass(Subject);

@@ -1,4 +1,5 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
+import { Type } from 'class-transformer';
 import * as mongoose from 'mongoose';
 import { Level } from 'src/level/level.schema';
 
@@ -17,6 +18,7 @@ export class Section {
     ref: Level.name,
     required: true,
   })
+  @Type(() => Level)
   level: Level;
 }
 

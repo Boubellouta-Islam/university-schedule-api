@@ -28,6 +28,7 @@ import GroupModule from 'src/group/group.module';
 import SubgroupModule from 'src/sub-group/sub-group.module';
 import PeriodModule from 'src/period/period.module';
 import ScheduleModule from 'src/schedule/schedule.module';
+import SessionModule from 'src/session/session.module';
 
 @Module({
   imports: [
@@ -52,6 +53,7 @@ import ScheduleModule from 'src/schedule/schedule.module';
     SubgroupModule,
     PeriodModule,
     ScheduleModule,
+    SessionModule,
   ],
   controllers: [AppController, TestController],
   providers: [AppService, TestService], //ChoiceService, TeacherService],

@@ -1,4 +1,5 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
+import { Type } from 'class-transformer';
 import * as mongoose from 'mongoose';
 import { Section } from 'src/section/section.schema';
 
@@ -17,6 +18,7 @@ export class Group {
     ref: Section.name,
     required: true,
   })
+  @Type(() => Section)
   private section: Section;
 }
 
