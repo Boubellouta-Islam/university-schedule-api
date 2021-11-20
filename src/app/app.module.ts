@@ -21,6 +21,7 @@ import TeacherModule from 'src/teacher/teacher.module';
 import SubjectModule from 'src/subject/subject.module';
 import ChoiceModule from 'src/choice/choice.module';
 import AffectationModule from 'src/affectation/affectation.module';
+import ClassroomModule from 'src/classroom/classroom.module';
 
 @Module({
   imports: [
@@ -38,6 +39,7 @@ import AffectationModule from 'src/affectation/affectation.module';
     SubjectModule,
     ChoiceModule,
     AffectationModule,
+    ClassroomModule,
   ],
   controllers: [AppController, TestController],
   providers: [AppService, TestService], //ChoiceService, TeacherService],
