@@ -27,6 +27,7 @@ import SectionModule from 'src/section/section.module';
 import GroupModule from 'src/group/group.module';
 import SubgroupModule from 'src/sub-group/sub-group.module';
 import PeriodModule from 'src/period/period.module';
+import ScheduleModule from 'src/schedule/schedule.module';
 
 @Module({
   imports: [
@@ -50,6 +51,7 @@ import PeriodModule from 'src/period/period.module';
     GroupModule,
     SubgroupModule,
     PeriodModule,
+    ScheduleModule,
   ],
   controllers: [AppController, TestController],
   providers: [AppService, TestService], //ChoiceService, TeacherService],
