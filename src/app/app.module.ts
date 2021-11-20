@@ -22,6 +22,7 @@ import SubjectModule from 'src/subject/subject.module';
 import ChoiceModule from 'src/choice/choice.module';
 import AffectationModule from 'src/affectation/affectation.module';
 import ClassroomModule from 'src/classroom/classroom.module';
+import LevelModule from 'src/level/level.module';
 
 @Module({
   imports: [
@@ -40,6 +41,7 @@ import ClassroomModule from 'src/classroom/classroom.module';
     ChoiceModule,
     AffectationModule,
     ClassroomModule,
+    LevelModule,
   ],
   controllers: [AppController, TestController],
   providers: [AppService, TestService], //ChoiceService, TeacherService],
