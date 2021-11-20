@@ -22,6 +22,7 @@ import { variables, environment } from '../config/environment';
 import { AuthModule } from '../auth/auth.module';
 import TeacherModule from 'src/teacher/teacher.module';
 import SubjectModule from 'src/subject/subject.module';
+import ChoiceModule from 'src/choice/choice.module';
 // import { ChoiceController } from './choice/choice.controller';
 // import { ChoiceService } from './choice/choice.service';
 // import { TeacherService } from './teacher/teacher.service';
@@ -41,6 +42,7 @@ import SubjectModule from 'src/subject/subject.module';
     AuthModule,
     TeacherModule,
     SubjectModule,
+    ChoiceModule,
   ],
   controllers: [AppController, TestController],
   providers: [AppService, TestService], //ChoiceService, TeacherService],
