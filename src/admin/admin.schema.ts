@@ -8,6 +8,9 @@ export class Admin {
 
   @Prop({ required: true, minlength: 3 })
   password: string;
+
+  @Prop({ required: true })
+  refreshToken: string;
 }
 
 export const adminSchema = SchemaFactory.createForClass(Admin);

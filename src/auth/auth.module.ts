@@ -15,7 +15,7 @@ import { JwtStrategy } from './strategy/jwt.strategy';
     JwtModule.registerAsync({
       useFactory: async () => ({
         secret: variables.jwt_secret,
-        signOptions: { expiresIn: '3600s' },
+        signOptions: {},
       }),
     }),
     MongooseModule.forFeature([{ name: 'Admin', schema: adminSchema }]),

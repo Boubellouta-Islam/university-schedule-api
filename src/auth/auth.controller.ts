@@ -12,10 +12,15 @@ export class AuthController {
 
   @Get("login")
   async login(@Body() admin: Admin): Promise<Observable<Object>> {
-    return (await this.authService.login(admin)).pipe(
-      map( (jwt: string) => {
+    return (await this.authService.login(admin));
+  }
+
+  @Post("refresh-token")
+  async refresToken(@Body("refreshToken") refreshToken: string){
+    return (await this.authService.refreshAccessToken(refreshToken)).pipe(
+      map( (accessToken: string) => {
         return {
-          token: jwt
+          accessToken
         }
       }
       )
