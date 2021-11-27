@@ -43,7 +43,7 @@ export class Subject {
   @Prop({
     type: mongoose.Schema.Types.ObjectId,
     ref: Level.name,
-    required: true,
+    required: false,
   })
   @Type(() => Level)
   level: Level;
