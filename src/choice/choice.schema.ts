@@ -8,6 +8,7 @@ import { VoeuxType } from 'src/utils/enum';
 export type ChoiceDocument = Choice & mongoose.Document;
 @Schema()
 export class Choice {
+
   @Prop({
     type: mongoose.Schema.Types.ObjectId,
     ref: Teacher.name,
@@ -31,13 +32,15 @@ export class Choice {
   private type: VoeuxType;
 
   @Prop({ required: true })
-  cours: Boolean;
+  course: Boolean;
 
   @Prop({ required: true })
   td: Boolean;
 
   @Prop({ required: true })
   tp: Boolean;
+
+
 }
 
 export const ChoiceSchema = SchemaFactory.createForClass(Choice);

@@ -39,7 +39,7 @@ export enum Filiere {
   INF = 'informatique',
 }
 
-export enum Specialty {
+export enum Speciality {
   FND = 'fondamentale',
   IND = 'industrielle',
   ASR = 'administration et sécurité de réseau',
