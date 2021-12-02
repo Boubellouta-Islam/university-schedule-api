@@ -9,7 +9,7 @@ import {
 } from '@nestjs/common';
 import { Subject } from 'rxjs';
 // import { TeacherDto } from '../teacher/teacher.dto';
-import AffectionDto from './affectation.dto';
+import { AffectionDto } from './affectation.dto';
 import { AffectationService } from './affectation.service';
 
 @Controller('affectation')

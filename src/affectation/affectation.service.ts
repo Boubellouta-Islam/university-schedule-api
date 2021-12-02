@@ -3,7 +3,7 @@ import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { Subject } from 'src/subject/subject.schema';
 import { Teacher } from 'src/teacher/teacher.schema';
-import AffectionDto from './affectation.dto';
+import { AffectionDto } from './affectation.dto';
 import { AffecationDocument, Affectation } from './affectation.schema';
 
 @Injectable()

@@ -25,5 +25,3 @@ export class AffectionDto {
   @Prop({ required: true })
   tp: Boolean;
 }
-
-export default AffectionDto;
