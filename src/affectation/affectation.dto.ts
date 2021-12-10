@@ -1,27 +1,25 @@
-import { Prop } from '@nestjs/mongoose';
-import { Subject } from 'src/subject/subject.schema';
-import { Teacher } from 'src/teacher/teacher.schema';
-import { VoeuxType } from 'src/utils/enum';
+import { IsBoolean, IsNotEmpty, IsObject } from 'class-validator';
+import { SubjectDto } from 'src/subject/subject.dto';
+import { TeacherDto } from 'src/teacher/teacher.dto';
 
 export class AffectionDto {
-  @Prop({ required: true })
-  teachet: Teacher;
+  @IsNotEmpty()
+  @IsObject()
+  teacher: TeacherDto;
 
-  @Prop({ required: true })
-  subject: Subject;
+  @IsNotEmpty()
+  @IsObject()
+  subject: SubjectDto;
 
-  @Prop({ required: true })
-  index: number;
-
-  @Prop({ required: true, enum: VoeuxType })
-  type: VoeuxType;
-
-  @Prop({ required: true })
+  @IsNotEmpty()
+  @IsBoolean()
   cours: Boolean;
 
-  @Prop({ required: true })
+  @IsNotEmpty()
+  @IsBoolean()
   td: Boolean;
 
-  @Prop({ required: true })
+  @IsNotEmpty()
+  @IsBoolean()
   tp: Boolean;
 }

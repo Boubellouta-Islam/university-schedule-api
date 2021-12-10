@@ -29,7 +29,7 @@ export class ChoiceDto {
 
   @IsNotEmpty()
   @IsBoolean()
-  course: boolean;
+  cours: boolean;
 
   @IsNotEmpty()
   @IsBoolean()

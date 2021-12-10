@@ -14,7 +14,7 @@ export class AffectationService {
   ) {}
 
   async findAllAffection() {
-    return this.affectationModel.find();
+    return await this.affectationModel.find();
   }
 
   async findByTeacherId(teacher: Teacher) {
@@ -27,17 +27,6 @@ export class AffectationService {
 
   async findBySubjectId(subject: Subject) {
     const post = await this.affectationModel.find({ subject: subject });
-    if (!post) {
-      throw new NotFoundException();
-    }
-    return post;
-  }
-
-  async findBySubjectTeacher(teacher: Teacher, subject: Subject) {
-    const post = await this.affectationModel.find({
-      teacher: teacher,
-      subject: subject,
-    });
     if (!post) {
       throw new NotFoundException();
     }
