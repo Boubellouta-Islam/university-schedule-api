@@ -20,10 +20,13 @@ export class Teacher {
   grade: Grade;
 
   @Prop({ required: true })
-  max_houres: Number;
+  max_hours: Number;
 
   @Prop({ default: 0 })
-  teached_houres: Number;
+  teached_hours: Number;
+
+  @Prop({ required: true })
+  code_pin: Number
 }
 
 export const TeacherSchema = SchemaFactory.createForClass(Teacher);

@@ -1,6 +1,6 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document } from 'mongoose';
-import { Domain, Filiere, LavelName, Specialty } from 'src/utils/enum';
+import { Domain, Filiere, LavelName, Speciality } from 'src/utils/enum';
 
 export type LevelDocument = Level & Document;
 
@@ -15,8 +15,11 @@ export class Level {
   @Prop({ required: true, enum: Filiere })
   filiere: Filiere;
 
-  @Prop({ required: true, enum: Specialty })
-  specialty: Specialty;
+  @Prop({ required: true, enum: Filiere })
+  sem_num: number;
+
+  @Prop({ required: true, enum: Speciality })
+  speciality: Speciality;
 }
 
 export const LevelSchema = SchemaFactory.createForClass(Level);
