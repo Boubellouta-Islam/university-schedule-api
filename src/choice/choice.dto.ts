@@ -1,32 +1,41 @@
 import { VoeuxType } from 'src/utils/enum';
-import { IsEnum, IsDefined, IsBoolean, IsInt, IsString } from 'class-validator';
-export class CreateChoiceDto {
+import {
+  IsEnum,
+  IsDefined,
+  IsBoolean,
+  IsInt,
+  IsString,
+  IsObject,
+  IsNotEmpty,
+} from 'class-validator';
+import { TeacherDto } from 'src/teacher/teacher.dto';
+import { SubjectDto } from 'src/subject/subject.dto';
+export class ChoiceDto {
+  @IsNotEmpty()
+  @IsObject()
+  teacher: TeacherDto;
 
-    @IsDefined()
-    @IsString()
-    teacher: string;
+  @IsNotEmpty()
+  @IsObject()
+  subject: SubjectDto;
 
-    @IsDefined()
-    @IsString()
-    subject: string;
+  @IsNotEmpty()
+  @IsInt()
+  index: number;
 
-    @IsDefined()
-    @IsInt()
-    index: number;
+  @IsNotEmpty()
+  @IsEnum(VoeuxType)
+  type: VoeuxType;
 
-    @IsDefined()
-    @IsEnum(VoeuxType)
-    type: VoeuxType;
+  @IsNotEmpty()
+  @IsBoolean()
+  course: boolean;
 
-    @IsDefined()
-    @IsBoolean()
-    course: boolean;
+  @IsNotEmpty()
+  @IsBoolean()
+  td: boolean;
 
-    @IsDefined()
-    @IsBoolean()
-    td: boolean;
-
-    @IsDefined()
-    @IsBoolean()
-    tp: boolean
+  @IsNotEmpty()
+  @IsBoolean()
+  tp: boolean;
 }

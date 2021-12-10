@@ -1,41 +1,42 @@
-import { Controller, Post, Body, Get, Param, Patch, Delete } from '@nestjs/common';
+import {
+  Controller,
+  Post,
+  Body,
+  Get,
+  Param,
+  Delete,
+  Put,
+} from '@nestjs/common';
 import { ChoiceService } from './choice.service';
-import { VoeuxType } from 'src/utils/enum';
-import { CreateChoiceDto } from './choice.dto';
+import { ChoiceDto } from './choice.dto';
 import { TeacherService } from 'src/teacher/teacher.service';
-
 
 @Controller('choice')
 export class ChoiceController {
-  constructor(private readonly choiceService: ChoiceService, private readonly teacherService: TeacherService) { }
-
-  @Post()
-  async create(@Body() createChoiceDto: CreateChoiceDto) {
-
-    const generatedId = await this.choiceService.insertChoice(createChoiceDto);
-    return { id: generatedId };
-
-  }
+  constructor(private readonly choiceService: ChoiceService) {}
 
   @Get()
-  async getAll() {
+  async getAllChoices() {
     return await this.choiceService.getChoices();
   }
 
   @Get(':id')
-  async getOneChoice(@Param('id') choiceId: string) {
+  async getChoiceById(@Param('id') choiceId: string) {
     return await this.choiceService.getChoice(choiceId);
   }
 
-  @Patch(':id')
-  update(@Param('id') choiceId: string, @Body('type') choiceType: VoeuxType, @Body('index') choiceIndex: number, @Body('course') course: boolean, @Body('td') td: boolean, @Body('tp') tp: boolean) {
-    this.choiceService.updateChoice(choiceId, choiceType, choiceIndex, course, td, tp);
-    return null;
+  @Post('add')
+  async addChoice(@Body() createChoiceDto: ChoiceDto) {
+    return await this.choiceService.insertChoice(createChoiceDto);
   }
 
-  @Delete(':id')
-  removeChoice(@Param('id') choiceId: string) {
-    this.choiceService.deleteChoice(choiceId);
-    return null;
+  @Put('update/:id')
+  async update(@Param('id') choiceId: string, @Body() updateChoice: ChoiceDto) {
+    return await this.choiceService.updateChoice(choiceId, updateChoice);
+  }
+
+  @Delete('delete/:id')
+  async removeChoice(@Param('id') choiceId: string) {
+    return await this.choiceService.deleteChoice(choiceId);
   }
 }
