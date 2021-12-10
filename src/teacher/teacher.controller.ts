@@ -1,16 +1,20 @@
-import { Controller, Post, Body, Get, Param, Patch, Delete } from '@nestjs/common';
+import {
+  Controller,
+  Post,
+  Body,
+  Get,
+  Param,
+  Patch,
+  Delete,
+  Put,
+} from '@nestjs/common';
 import { TeacherService } from './teacher.service';
-import { CreateTeacherDto } from './teacher.dto';
+import { TeacherDto } from './teacher.dto';
 import { Grade } from 'src/utils/enum';
 
 @Controller('teacher')
 export class TeacherController {
-  constructor(private readonly teacherService: TeacherService) { }
-  @Post()
-  async create(@Body() createTeacherDto: CreateTeacherDto) {
-    const generatedId = await this.teacherService.insertTeacher(createTeacherDto);
-    return { id: generatedId };
-  }
+  constructor(private readonly teacherService: TeacherService) {}
 
   @Get()
   async getAll() {
@@ -18,13 +22,18 @@ export class TeacherController {
   }
 
   @Get(':id')
-  async getOneTeacher(@Param('id') choiceId: string) {
-    return await this.teacherService.getTeacher(choiceId);
+  async getOneTeacher(@Param('id') teacherId: string) {
+    return await this.teacherService.getTeacherById(teacherId);
   }
 
-  @Patch(':id')
-  update(@Param('id') teacherId: string, @Body('firstName') firstName: string, @Body('lastName') lastName: string, @Body('email') email: string, @Body('grade') grade: Grade, @Body('maxHours') maxHours: number, @Body('teachedHours') teachedHours: number) {
-    this.teacherService.updateTeacher(teacherId, firstName, lastName, email, grade, maxHours, teachedHours);
+  @Post('/add')
+  async create(@Body() createTeacherDto: TeacherDto) {
+    return await this.teacherService.insertTeacher(createTeacherDto);
+  }
+
+  @Put('update/:id')
+  update(@Param('id') teacherId: string, @Body() updateTeacherDto: TeacherDto) {
+    this.teacherService.updateTeacher(teacherId, updateTeacherDto);
     return null;
   }
 

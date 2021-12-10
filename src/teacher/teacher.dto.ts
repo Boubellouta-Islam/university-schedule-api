@@ -1,32 +1,31 @@
 import { Grade } from 'src/utils/enum';
-import { IsEnum, IsDefined, IsBoolean, IsInt, IsString } from 'class-validator';
-import { type } from 'os';
-export class CreateTeacherDto {
+import { IsEnum, IsInt, IsString, IsNotEmpty, IsEmail } from 'class-validator';
+export class TeacherDto {
+  @IsNotEmpty()
+  @IsString()
+  first_name: string;
 
-    teacher_id: string
-    code_pin: number
+  @IsNotEmpty()
+  @IsString()
+  last_name: string;
 
-    @IsDefined()
-    @IsString()
-    first_name: string;
+  @IsNotEmpty()
+  @IsEmail()
+  email: string;
 
-    @IsDefined()
-    @IsString()
-    last_name: string;
+  @IsNotEmpty()
+  @IsEnum(Grade)
+  grade: Grade;
 
-    @IsDefined()
-    @IsString()
-    email: string;
+  @IsNotEmpty()
+  @IsInt()
+  max_hours: number;
 
-    @IsDefined()
-    @IsEnum(Grade)
-    grade: Grade
+  @IsNotEmpty()
+  @IsInt()
+  teached_hours: number;
 
-    @IsDefined()
-    @IsInt()
-    max_hours: number
-
-    @IsDefined()
-    @IsInt()
-    teached_hours: number
+  @IsNotEmpty()
+  @IsString()
+  code_pin: string;
 }
