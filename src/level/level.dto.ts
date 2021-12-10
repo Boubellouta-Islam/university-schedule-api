@@ -1,27 +1,19 @@
-import { Filiere, Grade, Speciality } from 'src/utils/enum';
-import { IsEnum, IsDefined, IsBoolean, IsInt, IsString } from 'class-validator';
-import { Domain } from 'domain';
-export class CreateLevelDto {
+import { Filiere, LavelName, Speciality, Domain } from 'src/utils/enum';
+import { IsEnum, IsNotEmpty } from 'class-validator';
+export class LevelDto {
+  @IsNotEmpty()
+  @IsEnum(LavelName)
+  name: LavelName;
 
-    @IsDefined()
-    @IsString()
-    name: string;
+  @IsNotEmpty()
+  @IsEnum(Domain)
+  domain: Domain;
 
-    @IsDefined()
-    @IsEnum(Domain)
-    domain: Domain;
+  @IsNotEmpty()
+  @IsEnum(Filiere)
+  filiere: Filiere;
 
-    @IsDefined()
-    @IsEnum(Filiere)
-    filier: Filiere;
-
-    @IsDefined()
-    @IsEnum(Grade)
-    sem_num: number
-
-    @IsDefined()
-    @IsInt()
-    speciality: Speciality
-
-
+  @IsNotEmpty()
+  @IsEnum(Speciality)
+  speciality: Speciality;
 }

@@ -15,9 +15,6 @@ export class Level {
   @Prop({ required: true, enum: Filiere })
   filiere: Filiere;
 
-  @Prop({ required: true, enum: Filiere })
-  sem_num: number;
-
   @Prop({ required: true, enum: Speciality })
   speciality: Speciality;
 }
