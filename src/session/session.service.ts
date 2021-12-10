@@ -20,7 +20,7 @@ export class SessionService {
   }
 
   async findOne(id: String) {
-    const session = await this.sessionModel.findById(id);
+    return await this.sessionModel.findById(id);
   }
 
   async addNewsession(sessionDto: SessionDto) {
