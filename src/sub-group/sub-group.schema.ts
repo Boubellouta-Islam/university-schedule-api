@@ -6,7 +6,13 @@ import { Group } from 'src/group/group.schema';
 export type SubGroupDocument = SubGroup & mongoose.Document;
 
 @Schema()
-export class SubGroup extends Group {
+export class SubGroup {
+  @Prop({ required: true })
+  name: string;
+
+  @Prop({ required: true })
+  student_number: number;
+
   @Prop({
     type: mongoose.Schema.Types.ObjectId,
     ref: Group.name,

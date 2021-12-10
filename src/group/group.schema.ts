@@ -19,7 +19,7 @@ export class Group {
     required: true,
   })
   @Type(() => Section)
-  private section: Section;
+  section: Section;
 }
 
 export const GroupSchema = SchemaFactory.createForClass(Group);
