@@ -5,7 +5,9 @@ import {
   IsNotEmpty,
   IsMongoId,
   IsEnum,
+  IsObject,
 } from 'class-validator';
+import { LevelDto } from 'src/level/level.dto';
 import { Semester, Teaching_unit } from 'src/utils/enum';
 export class SubjectDto {
   @IsString()
@@ -51,4 +53,7 @@ export class SubjectDto {
   @IsNumber()
   @IsNotEmpty()
   tp_num: number;
+
+  @IsObject()
+  level: LevelDto;
 }

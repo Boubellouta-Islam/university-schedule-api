@@ -40,13 +40,13 @@ export class Subject {
   @Prop({ required: true })
   tp_num: number;
 
-  // @Prop({
-  //   type: mongoose.Schema.Types.ObjectId,
-  //   ref: Level.name,
-  //   required: false,
-  // })
-  // @Type(() => Level)
-  // level: Level;
+  @Prop({
+    type: mongoose.Schema.Types.ObjectId,
+    ref: Level.name,
+    required: false,
+  })
+  @Type(() => Level)
+  level: Level;
 }
 
 export const SubjectSchema = SchemaFactory.createForClass(Subject);

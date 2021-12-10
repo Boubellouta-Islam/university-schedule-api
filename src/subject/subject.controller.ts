@@ -15,7 +15,7 @@ export class SubjectController {
   constructor(private readonly subjectService: SubjectService) {}
 
   @Get()
-  async getAllSubjects(): Promise<SubjectDto[]> {
+  async getAllSubjects() {
     return await this.subjectService.getSubjects();
   }
   @Get(':id')
@@ -26,7 +26,7 @@ export class SubjectController {
   async createSubject(@Body() subject: SubjectDto) {
     return await this.subjectService.createSubject(subject);
   }
-  @Put(':id')
+  @Put('update/:id')
   async updateSubject(@Param('id') id: string, @Body() subject: SubjectDto) {
     return this.subjectService.updateSubject(id, subject);
   }

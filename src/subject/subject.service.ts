@@ -10,9 +10,9 @@ export class SubjectService {
     @InjectModel(Subject.name) private subjectModul: Model<SubjectDocumnt>,
   ) {}
 
-  async getSubjects(): Promise<SubjectDto[]> {
+  async getSubjects() {
     try {
-      return await this.subjectModul.find().exec();
+      return await this.subjectModul.find();
     } catch (error) {
       console.log(error);
     }
