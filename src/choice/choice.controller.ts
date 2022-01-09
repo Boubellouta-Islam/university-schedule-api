@@ -25,8 +25,8 @@ export class ChoiceController {
     return await this.choiceService.getChoice(choiceId);
   }
 
-  @Post('add')
-  async addChoice(@Body() createChoiceDto: ChoiceDto) {
+  @Post('/add')
+  async addChoice(@Body() createChoiceDto) {
     return await this.choiceService.insertChoice(createChoiceDto);
   }
 
@@ -35,7 +35,7 @@ export class ChoiceController {
     return await this.choiceService.updateChoice(choiceId, updateChoice);
   }
 
-  @Delete('delete/:id')
+  @Delete('/delete/:id')
   async removeChoice(@Param('id') choiceId: string) {
     return await this.choiceService.deleteChoice(choiceId);
   }

@@ -28,15 +28,24 @@ export class TeacherService {
   }
 
   async insertTeacher(createTeacherDto: TeacherDto) {
+    try {
     const newTeacher = new this.teacherModel(createTeacherDto);
-    return await newTeacher.save();
+      return await newTeacher.save();
+    } catch (error) {
+      throw error;}
   }
 
   async updateTeacher(id: string, teacherDto: TeacherDto) {
-    return await this.teacherModel.findByIdAndUpdate(id, teacherDto);
+    try {
+      return await this.teacherModel.findByIdAndUpdate(id, teacherDto);
+    } catch (error) {
+      throw error;}
   }
 
   async deleteTeacher(id: string) {
-    return await this.teacherModel.findByIdAndDelete(id);
+    try {
+      return await this.teacherModel.findByIdAndDelete(id);
+    } catch (error) {
+      throw error;}
   }
 }

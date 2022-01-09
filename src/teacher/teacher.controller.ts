@@ -28,18 +28,31 @@ export class TeacherController {
 
   @Post('/add')
   async create(@Body() createTeacherDto: TeacherDto) {
-    return await this.teacherService.insertTeacher(createTeacherDto);
+    try{
+      console.log(createTeacherDto);
+      return await this.teacherService.insertTeacher(createTeacherDto);
+    } catch(error){
+      throw error;
+    }
   }
 
-  @Put('update/:id')
-  update(@Param('id') teacherId: string, @Body() updateTeacherDto: TeacherDto) {
-    this.teacherService.updateTeacher(teacherId, updateTeacherDto);
-    return null;
+  @Put('/update/:id')
+  async update(@Param('id') teacherId: string, @Body() updateTeacherDto: TeacherDto) {
+     try{
+      console.log(updateTeacherDto);
+      return await this.teacherService.updateTeacher(teacherId, updateTeacherDto);
+    } catch(error){
+      throw error;
+    }
   }
 
   @Delete(':id')
-  removeTeacher(@Param('id') teacherId: string) {
-    this.teacherService.deleteTeacher(teacherId);
-    return null;
+  async removeTeacher(@Param('id') teacherId: string) {
+         try{
+      console.log(teacherId);
+      return await this.teacherService.deleteTeacher(teacherId);
+    } catch(error){
+      throw error;
+    }
   }
 }

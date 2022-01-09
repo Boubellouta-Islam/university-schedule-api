@@ -21,7 +21,7 @@ export class SubjectService {
   async findSubject(idSubject: string) {
     try {
       const subject = await this.subjectModul.findById(idSubject);
-
+console.log(subject)
       if (!subject) {
         throw new NotFoundException('Subject not found');
       }

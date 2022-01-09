@@ -23,12 +23,12 @@ export class LevelController {
     return await this.levelService.getLevel(levelId);
   }
 
-  @Post('add')
+  @Post('/add')
   async create(@Body() createLevelDto: LevelDto) {
     return await this.levelService.insertLevel(createLevelDto);
   }
 
-  @Put('update/:id')
+  @Put('/update/:id')
   async updateLevel(
     @Param('id') levelId: string,
     @Body() updateLevelDto: LevelDto,
@@ -36,7 +36,7 @@ export class LevelController {
     return await this.levelService.updateLevel(levelId, updateLevelDto);
   }
 
-  @Delete('delete/:id')
+  @Delete('/delete/:id')
   removeLevel(@Param('id') levelId: string) {
     return this.levelService.deleteLevel(levelId);
   }

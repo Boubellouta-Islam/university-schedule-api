@@ -22,15 +22,15 @@ export class SubjectController {
   async getSingleSubjects(@Param('id') id: string) {
     return await this.subjectService.findSubject(id);
   }
-  @Post('add')
-  async createSubject(@Body() subject: SubjectDto) {
+  @Post('/add')
+  async createSubject(@Body() subject) {
     return await this.subjectService.createSubject(subject);
   }
-  @Put('update/:id')
-  async updateSubject(@Param('id') id: string, @Body() subject: SubjectDto) {
+  @Put('/update/:id')
+  async updateSubject(@Param('id') id: string, @Body() subject) {
     return this.subjectService.updateSubject(id, subject);
   }
-  @Delete('delete/:id')
+  @Delete('/delete/:id')
   async deleteSubject(@Param('id') id: string) {
     await this.subjectService.deleteSubject(id);
     return null;
