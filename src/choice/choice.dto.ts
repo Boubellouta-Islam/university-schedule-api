@@ -1,15 +1,13 @@
-import { VoeuxType } from 'src/utils/enum';
 import {
-  IsEnum,
-  IsDefined,
   IsBoolean,
+  IsEnum,
   IsInt,
-  IsString,
-  IsObject,
   IsNotEmpty,
+  IsObject,
 } from 'class-validator';
-import { TeacherDto } from 'src/teacher/teacher.dto';
 import { SubjectDto } from 'src/subject/subject.dto';
+import { TeacherDto } from 'src/teacher/teacher.dto';
+import { VoeuxType } from 'src/utils/enum';
 export class ChoiceDto {
   @IsNotEmpty()
   @IsObject()
